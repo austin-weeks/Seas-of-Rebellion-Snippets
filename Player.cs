@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
 
 	private void Awake()
 	{
-		
 		rigidBody = GetComponent<Rigidbody>();
 		buffDebuffs = GetComponent<BuffDebuffs>();
 		capsuleCollider = GetComponent<CapsuleCollider>();
@@ -190,17 +189,6 @@ public class Player : MonoBehaviour
 		}
 		else return false;
 	}
-	
-	//Could be useful for a relic that changes how boosting works. Would need to refactor to reduce stamina on dash.
-	
-	//private void GameInput_OnDashAction(object sender, System.EventArgs e)
-	//{
-	//    if (dashingCooldown >= dashingCooldownMax)
-	//    {
-	//        rigidBody.AddForce(dashBoostMultiplier * rigidBody.velocity.magnitude * transform.forward, ForceMode.Impulse);
-	//        dashingCooldown = 0f;
-	//    }
-	//}
 
 	//Setting Functions
 	ShipType currentShipType;
@@ -328,5 +316,4 @@ public class Player : MonoBehaviour
 	{
 		return (GameInput.Instance.PlayerHoldingSprint() && GameInput.Instance.ShouldMoveForward()) || GameInput.Instance.PlayerAiming();
 	}
-	
 }
